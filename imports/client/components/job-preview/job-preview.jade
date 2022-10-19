@@ -23,10 +23,12 @@ template(name="jobPreview")
           br
           if budget.value
             b #{budget.value}
-          if budget.currency
-            b #{budget.currency} 
-          if budget.type
-            | &middot; #{budget.type}
+            if budget.currency
+              b #{budget.currency} 
+            if budget.type
+              | &middot; #{budget.type}
+          else if budget.type
+            | #{budget.type}
 
 
     div(class="{{#if isSmall}}well-container text-center{{else}}col{{/if}}")
